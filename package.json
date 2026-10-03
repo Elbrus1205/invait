@@ -1,0 +1,13 @@
+{
+  "name": "telegram-vds-panel",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "npm@11.6.0",
+  "scripts": {
+    "dev": "docker compose up --build",
+    "typecheck": "npm run typecheck --workspace @telegram-vds/backend && npm run typecheck --workspace @telegram-vds/worker && npm run typecheck --workspace @telegram-vds/frontend",
+    "lint": "npm run lint --workspace @telegram-vds/backend && npm run lint --workspace @telegram-vds/worker && npm run lint --workspace @telegram-vds/frontend",
+    "test": "npm run test --workspace @telegram-vds/backend && npm run test --workspace @telegram-vds/worker && npm run test --workspace @telegram-vds/frontend"
+  },
+  "workspaces": ["apps/*", "packages/*"]
+}

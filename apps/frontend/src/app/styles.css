@@ -1,0 +1,21 @@
+:root { color-scheme: dark; --bg: #0d1117; --panel: #151b24; --muted: #8b98aa; --text: #f0f4f8; --line: #283241; --accent: #4fd1a5; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+.dashboard-shell { min-height: 100vh; display: flex; }
+.sidebar { width: 240px; flex: 0 0 240px; border-right: 1px solid var(--line); padding: 24px 14px; background: #10151d; }
+.brand { font-weight: 700; letter-spacing: .01em; padding: 8px 12px 28px; }
+nav { display: grid; gap: 4px; }
+.nav-item { color: var(--muted); text-decoration: none; padding: 10px 12px; border-radius: 6px; font-size: 14px; }
+.nav-item:hover, .nav-item.active { background: #1d2733; color: var(--text); }
+.content { flex: 1; padding: 42px clamp(24px, 5vw, 72px); max-width: 1400px; }
+.page-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; }
+.eyebrow { color: var(--accent); text-transform: uppercase; font-size: 11px; font-weight: 700; letter-spacing: .12em; margin: 0 0 8px; }
+h1, h2, p { margin-top: 0; } h1 { font-size: 32px; margin-bottom: 0; } h2 { font-size: 20px; }
+.environment { border: 1px solid var(--line); color: var(--muted); border-radius: 999px; padding: 7px 12px; font-size: 12px; }
+.metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 40px; }
+.metric { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 18px; min-height: 104px; display: flex; flex-direction: column; justify-content: space-between; }
+.metric span { color: var(--muted); font-size: 13px; } .metric strong { font-size: 30px; }
+.empty-state { margin-top: 26px; border: 1px dashed #3a4657; border-radius: 8px; padding: 56px 28px; text-align: center; background: rgba(21, 27, 36, .55); }
+.empty-state p { color: var(--muted); max-width: 520px; margin: 0 auto 22px; line-height: 1.6; }
+button { background: var(--accent); color: #08241c; border: 0; border-radius: 6px; font-weight: 700; padding: 11px 16px; cursor: pointer; }
+@media (max-width: 760px) { .sidebar { width: 64px; flex-basis: 64px; padding: 16px 8px; } .brand { font-size: 0; padding: 8px; } .brand::after { content: "TP"; font-size: 14px; } .nav-item { font-size: 0; text-align: center; } .nav-item::first-letter { font-size: 16px; } .content { padding: 28px 18px; } .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 28px; } }
